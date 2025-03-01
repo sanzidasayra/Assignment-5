@@ -1,23 +1,9 @@
-.poppins-regular {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+.gradient-bg {
+    background: linear-gradient(
+      to right, 
+      #3752FD 0%, 
+      #6C7FFA 53%, 
+      #9BA8F8 100%
+    );
   }
   
-  .poppins-medium {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .poppins-semibold {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-  }
-  
-  .poppins-bold {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
