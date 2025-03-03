@@ -14,7 +14,7 @@ function handleComplete(taskName) {
     const now = new Date();
     const logEntry = document.createElement("p");
     logEntry.textContent = `You have completed the task ${taskName}  at ${now.toLocaleTimeString()}`;
-    logEntry.classList.add("text-lg", "mt-2", "text-gray-700");
+    logEntry.classList.add("text-lg", "mt-2", "text-gray-700", "bg-slate-100", "p-4", "rounded-lg");
 
     activityLog.appendChild(logEntry);
 
