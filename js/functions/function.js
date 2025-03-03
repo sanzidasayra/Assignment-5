@@ -1,5 +1,44 @@
-function handleComplete() {
-    alert("Board Updated Successfully")
+function handleComplete(taskName) {
+    const totalTask = document.getElementById("total-task");
+    const completedTasks = document.querySelector(".text-3xl.font-bold");
+    const activityLog = document.getElementById("activity-log"); 
+
+    let currentTotal = parseInt(totalTask.textContent);
+    let completedCount = parseInt(completedTasks.textContent);
+
+    if (currentTotal > 0) {
+        totalTask.textContent = currentTotal - 1;
+        completedTasks.textContent = completedCount + 1;
+    }
+
+    const now = new Date();
+    const logEntry = document.createElement("p");
+    logEntry.textContent = `You have completed the task ${taskName}  at ${now.toLocaleTimeString()}`;
+    logEntry.classList.add("text-lg", "mt-2", "text-gray-700");
+
+    activityLog.appendChild(logEntry);
+
+    const completeButton = event.target;
+    completeButton.disabled = true;
+    completeButton.classList.add("bg-gray-300");
+    completeButton.textContent = "Completed";
+
+    alert("Board Updated Successfully");
+
+    checkAllTasksCompleted();
+}
+
+function checkAllTasksCompleted() {
+    const totalTask = document.getElementById("total-task");
+    const currentTotal = parseInt(totalTask.textContent);
+
+    if (currentTotal === 0) {
+        alert("All tasks have been completed!");
+    }
+}
+
+function clearHistory() {
+    document.getElementById("activity-log").innerHTML = "";
 }
 
 function pickDifferentColor() {
@@ -8,6 +47,7 @@ function pickDifferentColor() {
     ]
     return colors[Math.floor(Math.random() * colors.length)];
 }
+
 function handleColorChange() {
    const element = document.getElementById("bg-color");
    element.classList = "bg-slate-100 poppins-regular pb-9";
